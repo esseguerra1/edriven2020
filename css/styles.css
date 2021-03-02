@@ -1,3 +1,27 @@
+table{
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 70%;
+}
+td,
+th{
+  border: 1px solid black;
+  padding: 3px;
+  text-align: center;
+}
+th{
+  background-color: grey;
+}
 h1{
-    color: aqua;
+    color: yellow;
+    background-color: red;
+    text-align: center;
+}
+h2{
+    background-color: purple;
+}
+h3{
+    background-color: greenyellow;
 }
