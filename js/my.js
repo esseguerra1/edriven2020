@@ -9,27 +9,27 @@ function Calendar(element, month, dayWeek){
     if(month == 1)
         sMonth = '<h2>January</h2>'
         else if(month == 2)
-            sMonth = '<h3>February</h3>'
+            sMonth = '<h2>February</h2>'
         else if(month ==3)
             sMonth = '<h2>March</h2>'
         else if(month == 4)
-            sMonth = '<h3>April</h3>'
+            sMonth = '<h2>April</h2>'
         else if(month == 5)
             sMonth = '<h2>May</h2>'
         else if(month == 6)
-            sMonth = '<h3>June</h3>'
+            sMonth = '<h2>June</h2>'
         else if(month == 7)
             sMonth = '<h2>July</h2>'
         else if(month == 8)
-            sMonth = '<h3>August</h3>'
+            sMonth = '<h2>August</h2>'
         else if(month == 9)
             sMonth = '<h2>September</h2>'
         else if(month == 10)
-            sMonth = '<h3>October</h3>'
+            sMonth = '<h2>October</h2>'
         else if(month == 11)
             sMonth = '<h2>November</h2>'
         else if(month == 12)
-            sMonth ='<h3>December</h3>'
+            sMonth ='<h2>December</h2>'
         else{
             sMonth = 'Invalid Input'
         }
