@@ -98,7 +98,7 @@ function Calendar(element, month, dayWeek){
                     }
                 }
             }else if(days[month-1] == 28){
-                if(dayWeek >= 6){
+                if(dayWeek >= 2){
                     for (let i = 0; i < 35; i++){
                         if(weekCount == 0) {
                             table += '<tr>'
@@ -151,9 +151,9 @@ function Calendar(element, month, dayWeek){
                         }
                     }
                 }
-            }else{
-                if(dayWeek >= 6){
-                    for(let i = 0; i < 35; i++){
+            }else if(days[month-1] == 30){
+                if(dayWeek > 6){
+                    for(let i = 0; i < 42; i++){
                         if (weekCount == 0) {
                             table += '<tr>'
                         }
@@ -196,12 +196,11 @@ function Calendar(element, month, dayWeek){
                                 }
                                 else
                                     table += "<td></td>"
-
-                    }
-                    if (weekCount == 6) {
+                                }
+                            if (weekCount == 6) {
                         table += '</tr>'
                         weekCount = 0
-                    }
+                        }
                     else{
                         weekCount++
                     }
