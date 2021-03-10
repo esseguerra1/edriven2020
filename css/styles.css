@@ -1,23 +1,14 @@
 table{
-  border-collapse: collapse;
-  margin: auto;
-  width: 60%;
-  height: 70%;
+  margin: 50%;
 }
-td, th{
-  border: 1px solid black;
-  padding: 3px;
-  text-align: center;
+div{
+  padding-left: 30%;
+  padding-bottom: 7px;
 }
-th{
-  background-color: grey;
+button{
+  border-radius: 5px;
 }
-h1{
-  color: yellow;
-  background-color: red;
-  text-align: center;
-}
-h2{
-  font-weight: bold;
-  font-family: Verdana, Tahoma, sans-serif;
+input{
+  border-radius: 5px;
+  text-align: right;
 }

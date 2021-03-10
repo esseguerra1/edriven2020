@@ -1,215 +1,43 @@
-var month, day;
-month = prompt("Month (1-12)",);
-day = prompt("Day (1-7)",);
+function User(){
+    var q1, q2, q3, q4, q5;
+    q1 = document.getElementById("q1").value;
+    q2 = parseInt(q1) * 0.12;
+    q3 = parseInt(q2) + parseInt(q1);
+    q4 = q3;
+    q5 = parseInt(q4) - parseInt(q3);
 
-function Calendar(element, month, dayWeek){
-    const days = [31,28,31,30,31,30,31,31,30,31,30,31];
+    if(q1 >= 100 && q1 <= 10000){
+        document.getElementById("q2").value = q2.toFixed(2);
+        document.getElementById("q3").value = q3.toFixed(2);
+        document.getElementById("q4").value = q4.toFixed(2);
+        document.getElementById("q4").disabled = false;
+        document.getElementById("q4").min = q3.toFixed(2);
+        document.getElementById("q5").value = q5.toFixed(2);
+        btn1.style.backgroundColor = "green";
+        btn1.disabled = false;
 
-    let sMonth = ''
-    if(month == 1)
-        sMonth = '<h2>January</h2>'
-        else if(month == 2)
-            sMonth = '<h2>February</h2>'
-        else if(month ==3)
-            sMonth = '<h2>March</h2>'
-        else if(month == 4)
-            sMonth = '<h2>April</h2>'
-        else if(month == 5)
-            sMonth = '<h2>May</h2>'
-        else if(month == 6)
-            sMonth = '<h2>June</h2>'
-        else if(month == 7)
-            sMonth = '<h2>July</h2>'
-        else if(month == 8)
-            sMonth = '<h2>August</h2>'
-        else if(month == 9)
-            sMonth = '<h2>September</h2>'
-        else if(month == 10)
-            sMonth = '<h2>October</h2>'
-        else if(month == 11)
-            sMonth = '<h2>November</h2>'
-        else if(month == 12)
-            sMonth ='<h2>December</h2>'
-        else{
-            sMonth = 'Invalid Input'
-        }
-
-    let table = `<table><tr><td colspan = "7" align = "center" id = "month">${sMonth}</tr></td><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>`
-    let count = 1
-    let calDays = 1
-    let weekCount = 0
-
-    if(month > 12 || dayWeek > 7){
-        element.innerHTML = ("<h1>Invalid Input</h1>")
-    }else if(month == 0 || dayWeek == 0)
-        element.innerHTML = ("<h1>Invalid Input</h1>")
-        else{
-            if(days[month-1] == 31){
-                if(dayWeek >= 6){
-                    for(let i = 0; i < 42; i++){
-                        if(weekCount == 0){
-                            table += '<tr>'
-                        }
-                        if(count <= dayWeek - 1) {
-                            table += "<td></td>"
-                            count++
-                        }
-                        else if (calDays > days[month - 1])
-                        table += "<td></td>"
-                        else{
-                            if (calDays <= days[month - 1]) {
-                                table += `<td>${calDays}</td>`
-                                calDays++
-                            }else
-                            table += "<td></td>"
-                        }
-                        if (weekCount == 6) {
-                            table += '</tr>'
-                            weekCount = 0
-                        }else{
-                            weekCount++
-                        }
-                    }
-                }
-                else{
-                    for(let i = 0; i < 35; i++){
-                        if(weekCount == 0){
-                            table += '<tr>'
-                        }
-                        if (count <= dayWeek - 1) {
-                            table += "<td></td>"
-                            count++
-                        }
-                        else if (calDays > days[month - 1])
-                            table += "<td></td>"
-                        else{
-                            if (calDays <= days[month - 1]) {
-                                table += `<td>${calDays}</td>`
-                                calDays++
-                            }else
-                                table += "<td></td>"
-                        }
-                        if (weekCount == 6) {
-                            table += '</tr>'
-                            weekCount = 0
-                        }else{
-                            weekCount++
-                        }
-                    }
-                }
-            }else if(days[month-1] == 28){
-                if(dayWeek >= 2){
-                    for (let i = 0; i < 35; i++){
-                        if(weekCount == 0) {
-                            table += '<tr>'
-                        }
-                        if(count <= dayWeek - 1) {
-                            table += "<td></td>"
-                            count++
-                        }
-                        else if (calDays > days[month - 1])
-                            table += "<td></td>"
-                        else{
-                            if (calDays <= days[month - 1]) {
-                                table += `<td>${calDays}</td>`
-                                calDays++
-                            }else
-                                table += "<td></td>"
-                        }
-                        if (weekCount == 6) {
-                            table += '</tr>'
-                            weekCount = 0
-                        }
-                        else{
-                            weekCount++
-                        }
-                    }
-                }else{
-                    for (let i = 0; i < 28; i++){
-                        if (weekCount == 0){
-                            table += '<tr>'
-                        }
-                        if (count <= dayWeek - 1) {
-                            table += "<td></td>"
-                            count++
-                        }
-                        else if (calDays > days[month - 1])
-                            table += "<td></td>"
-                        else{
-                            if (calDays <= days[month - 1]) {
-                                table += `<td>${calDays}</td>`
-                                calDays++
-                            }else
-                                table += "<td></td>"
-                        }
-                        if (weekCount == 6) {
-                            table += '</tr>'
-                            weekCount = 0
-                        }
-                        else{
-                            weekCount++
-                        }
-                    }
-                }
-            }else if(days[month-1] == 30){
-                if(dayWeek > 6){
-                    for(let i = 0; i < 42; i++){
-                        if (weekCount == 0) {
-                            table += '<tr>'
-                        }
-                        if (count <= dayWeek - 1) {
-                            table += "<td></td>"
-                            count++
-                        }
-                        else if (calDays > days[month - 1])
-                            table += "<td></td>"
-                        else{
-                            if(calDays <= days[month - 1]) {
-                                table += `<td>${calDays}</td>`
-                                calDays++
-                            }
-                            else
-                                table += "<td></td>"
-                        }
-                        if (weekCount == 6) {
-                            table += '</tr>'
-                            weekCount = 0
-                        }else {
-                            weekCount++
-                        }
-                    }
-                }else{
-                    for(let i = 0; i < 35; i++){
-                        if (weekCount == 0) {
-                            table += '<tr>'
-                        }
-                        if (count <= dayWeek - 1) {
-                            table += "<td></td>"
-                            count++
-                        }
-                        else if (calDays > days[month - 1])
-                            table += "<td></td>"
-                            else {
-                                if (calDays <= days[month - 1]) {
-                                    table += `<td>${calDays}</td>`
-                                    calDays++
-                                }
-                                else
-                                    table += "<td></td>"
-                                }
-                            if (weekCount == 6) {
-                        table += '</tr>'
-                        weekCount = 0
-                        }
-                    else{
-                        weekCount++
-                    }
-                }
-            }
-        }
-        table += '</table>'
-        element.innerHTML = table;
+    }else{
+        document.getElementById("q2").value = "";
+        document.getElementById("q3").value = "";
+        document.getElementById("q4").value = "";
+        document.getElementById("q4").disabled = true;
+        document.getElementById("q4").min = "";
+        document.getElementById("q5").value = "";
+        btn1.style.backgroundColor = "marron";
+        btn1.disabled = true;
     }
 }
-
-Calendar(main, month, day);
+function pay(){
+    var q3, q4, q5;
+    q3 = document.getElementById("q3").value;
+    q4 = document.getElementById("q4").value;
+    q5 = parseInt(q4) - parseInt(q3);
+    document.getElementById("q5").value = q5.toFixed(2);
+    if(q5 >= 0){
+        btn1.style.backgroundColor = "green";
+        btn1.disabled = false;
+    }else{
+        btn1.style.backgroundColor = "maroon";
+        btn1.disabled = true;
+    }
+}
