@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>EVENT DRIVEN SA</title>
+</head>
+<body class="bod">
+    <div class="navbr">
+        <a class="active" href="#">EVENT DRIVEN SUMMATIVE ASSESSMENT</a>
+        <div class="contright">
+            <a href="#">Contact</a>
+          </div>
+      </div>
+      
+      <div class="container">
+        <button id="myBtn">New</button>
+        <table id="myTable">
+          <tr>
+            <th>No. #</th>
+            <th>Order #</th>
+            <th>Customer Name</th>
+            <th>Total</th>
+            <th>Actions</th>
+          </tr>
+          <tr>
+            <td colspan="6" align="center">No Records</td>
+          </tr>
+        </table>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              <h2>New order</h2>
+            </div>
+            <div class="modal-body">
+              <form>
+                <input type="text" id="orNum" name="orNum" value="" placeholder="OR Number" /><br />
+                <input type="text" id="cName" name="cName" value="" placeholder="Customer Name" /><br />
+                <hr size="1" width="100%" color="black" />
+                <h2>Items</h2>
+                <table>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select name="" id="itm1"> </select>
+                    </td>
+                    <td>
+                      <input type="number" name="" id="price1" placeholder="Price" min="1" value="1.00" class="cost" />
+                    </td>
+                    <td>
+                      <input type="number" name="" id="qty1" placeholder="QTY" min="1" value="1" class="qty" />
+                    </td>
+                    <td>
+                      <input type="text" name="" id="subtotal1" placeholder="Subtotal" value="" disabled />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select name="" id="itm2"> </select>
+                    </td>
+                    <td>
+                      <input type="number" name="" id="price2" placeholder="Price" min="1" value="1.00" class="cost" />
+                    </td>
+                    <td>
+                      <input type="number" name="" id="qty2" placeholder="QTY" min="1" value="1" class="qty" />
+                    </td>
+                    <td>
+                      <input type="text" name="" id="subtotal2" placeholder="Subtotal" value="" disabled />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select name="" id="itm3"> </select>
+                    </td>
+                    <td>
+                      <input type="number" name="" id="price3" placeholder="Price" min="1" value="1.00" class="cost" />
+                    </td>
+                    <td>
+                      <input type="number" name="" id="qty3" placeholder="QTY" min="1" value="1" class="qty" />
+                    </td>
+                    <td>
+                      <input type="text" name="" id="subtotal3" placeholder="Subtotal" value="" disabled />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select name="" id="itm4"> </select>
+                    </td>
+                    <td>
+                      <input type="number" name="" id="price4" placeholder="Price" min="1" value="1.00" class="cost" />
+                    </td>
+                    <td>
+                      <input type="number" name="" id="qty4" placeholder="QTY" min="1" value="1" class="qty" />
+                    </td>
+                    <td>
+                      <input type="text" name="" id="subtotal4" placeholder="Subtotal" value="" disabled />
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <button type="button" id="save">Save</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <h3></h3>
+            </div>
+          </div>
+        </div>
+        <div id="viewModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span id="viewModalClose" class="close">&times;</span>
+              <h2 id="modal-title">View Order</h2>
+            </div>
+            <div id="viewModalBod" class="modal-body">
+            </div>
+            <div class="modal-footer">
+              <h3></h3>
+            </div>
+          </div>
+        </div>
+        <script src="js/my.js"></script>
+        <script>
+          // Get the modal
+          var modal = document.getElementById("myModal");
+          // Get the button that opens the modal
+          var btn = document.getElementById("myBtn");
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
+          // When the user clicks the button, open the modal
+            btn.onclick = function () {
+            modal.style.display = "block";
+          };
+          // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+            console.log('CLOSED');
+            modal.style.display = "none";
+          };
+          // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          };
+        </script>
+      </div>
+</body>
+</html>

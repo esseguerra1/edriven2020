@@ -1,41 +1,51 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT DRIVEN SA</title>
     <link rel="stylesheet" href="css/styles.css">
-    <title>PA3</title>
-
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-
-    <table id="User1">
+<body class="bg_head">
         <div>
-            <input type="number" class="input1" id="q1" placeholder="Subtotal" min="100" max="10000" value="" oninput="User()">
-            User input from 100 to 10,000
+            <p>Welcome to my Website!</p>
+            <h3>Hello I'm, Eddison Seguerra</h3>
+            <p>I'm a 2nd Year College Student</p>
+            <p>Contact Info 09666851937</p>
+            <p>Email: eddisonseguerra@gmail.com</p>
         </div>
-        <div>
-            <input type="text" class="input2" id="q2" placeholder="Tax" value="" disabled>
-            +12% Tax
+        <div class="socmed">
+            <script>
+                function shareOnFb(url)
+                {
+                 window.open('https://www.facebook.com/eddison.seguerra/');
+                }
+            </script>
+            <a href="#" class="socmed_icon" onclick='shareOnFb()';><i class='bx bxl-facebook-square' ></i></a>
+            <script>
+                function shareOnIg(url)
+                {
+                 window.open('https://www.instagram.com/eddisonseguerra/');
+                }
+            </script>
+            <a href="#" class="socmed_icon" onclick='shareOnIg()'><i class='bx bxl-instagram' ></i></a>
+            <script>
+                function shareOnTwitter(url)
+                {
+                 window.open('https://twitter.com/eddisonseguerra');
+                }
+            </script>
+            <a href="#" class="socmed_icon" onclick='shareOnTwitter()'><i class='bx bxl-twitter' ></i></a>
+            <script>
+                function shareOnGitHub(url)
+                {
+                 window.open('https://github.com/esseguerra1');
+                }
+            </script>
+            <a href="#" class="socmed_icon" onclick='shareOnGitHub()'><i class='bx bxl-github' ></i></a>
         </div>
-        <div>
-            <input type="text" class="input3" id="q3" placeholder="Total" value="" disabled>
-            Subtotal + Tax
-        </div>
-        <div>
-            <input type="number" class="input4" id="q4" placeholder="Amount Paid" value="" oninput="pay()" disabled>
-            Minimum is base on Subtotal + Tax
-        </div>
-        <div>
-            <input type="text" class="input5" id="q5" placeholder="Change" value="" disabled>
-            Amount Paid - Total
-        </div>
-        <div>
-            <button class="btn" id="btn1" type="button" style="background-color: red;"disabled>
-                Pay
-            </button>
-        </div>
-    </table>
-    
-    <script src="js/my.js"></script>
+        <a href="Home.html" class="btn_join"><h1>Join</h1></a>
 </body>
 </html>
